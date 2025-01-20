@@ -31,7 +31,7 @@ tabela = pandas.read_csv('produtos.csv') #It's mandatory to store the database (
 for linha in tabela.index:
     #codigo
     pyautogui.click(x=864, y=346)
-    codigo = tabela.loc[linha, "codigo"] #loc -> localizar (Se fosse 'for column' seria tabela.loc[..., column]) porque o codigo ja muda a linha/coluna sozinho
+    codigo = tabela.loc[linha, "codigo"] 
     pyautogui.write(str(codigo))
     
     #marca
@@ -64,7 +64,7 @@ for linha in tabela.index:
     obs = str(tabela.loc[linha, "obs"])
     
     if obs != 'nan':
-        pyautogui.write(obs) #porque o pandas trasnforma os valores vazios em NaN
+        pyautogui.write(obs) #because pandas transforms empty values ​​into NaN
 
     pyautogui.press('tab')
     pyautogui.press('enter')
